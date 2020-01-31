@@ -1,0 +1,90 @@
+:root {
+  --offWhite: #eee;
+  --gray: #555;
+  --blue: #2980b9;
+  --red: #e74c3c;
+  --clear: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: "Roboto";
+  /* CitrusPeel gradient from https://uigradients.com/#CitrusPeel */
+  background: #FDC830;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE10+/Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  background-color: var(--blue);
+  color: white;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.fa-plus {
+  float: right;
+}
+
+#container {
+  background-color: var(--offWhite);
+  width: 360px;
+  margin: 100px auto 0px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  background-color: var(--offWhite);
+  color: var(--blue);
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 13px 13px 20px;
+}
+
+input:focus {
+  background-color: white;
+  border: 3px solid var(--clear);
+  outline: none;
+}
+
+#taskList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+li {
+  background: white;
+  color: var(--gray);
+  height: 40px;
+  line-height: 40px;
+}
+
+li:nth-child(even) {
+  background: var(--offWhite);
+}
+
+.remove {
+  background-color: var(--red);
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+  display: inline-block;
+  height: 40px;
+  width: 0px;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+li:hover .remove {
+  width: 40px;
+  opacity: 1;
+}
+
+.taskDone {
+  color: gray;
+  text-decoration: line-through;
+}

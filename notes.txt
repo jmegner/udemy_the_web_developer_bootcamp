@@ -1,0 +1,42 @@
+################################################################################
+# Javascript/DOM stuff
+################################################################################
+
+document.{querySelector,querySelectorAll}
+
+elem.classList.{add,remove,toggle,contains,item}
+https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+https://www.w3schools.com/jsref/prop_element_classlist.asp
+
+elem.textContent gets all the text, stripping out all tags; so body.textContent gets a lot of raw concatenated text; setting textContent escapes any HTML syntax, thus you are only setting text
+
+elem.{innerHTML,outerHTML} to access HTML; inner for inside elem, outer for elem's html as well
+
+elem.{getAttribute,setAttribute} for attributes like href in <a href="...">...
+
+elem.addEventListener(eventTypeString, callback)
+someButton.addEventListener("click", ()=>{this.textContent="clicked";});
+'this' will be the object you did the addEventListener on
+
+for actual&current style of element...
+var bodyBgColor = window.getComputedStyle(document.body).backgroundColor;
+
+
+################################################################################
+# JQuery
+################################################################################
+
+jquery .on vs .click ...
+$('a').on('click', selector, callback) will apply to future (dynamically added)
+selector-approved things under anchor and $(selector).click(callback) will
+apply to currently-existing selector-approved things
+
+event callback
+    * arrow notation makes 'this' window object; arrow lambdas do not have their
+      own bindings for 'this' or 'arguments'
+    * function(){} notation makes 'this' event target
+if you do $('a').click(function(){this.remove()} the 'this' will refer to event
+target;  if you do $('a').click(()=>{this.remove()} the 'this' will refer to
+window object;
+https://stackoverflow.com/questions/49449325/this-is-selecting-window-object-instead-of-clicked-element-jquery
+https://stackoverflow.com/questions/34361379/are-arrow-functions-and-functions-equivalent-exchangeable
