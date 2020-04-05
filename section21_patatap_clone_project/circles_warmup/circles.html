@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="circles.css">
+  <script type="text/javascript" src="paper-full.js"></script>
+  <script type="text/paperscript" canvas="myCanvas">
+    var numRows = 10;
+    var numCols = 10;
+    var rowSpacing = 100;
+    var colSpacing = 100;
+    var radius = 15;
+
+    for(var r = 0; r < numRows; r++)
+    {
+      for(var c = 0; c < numCols; c++)
+      {
+        var circle = new Path.Circle(new Point(c * colSpacing + radius, r * rowSpacing + radius), radius);
+        circle.fillColor = 'red';
+      }
+    }
+  </script>
+  <title>Circles</title>
+</head>
+
+<body>
+  <canvas id="myCanvas" resize></canvas>
+</body>
+
+</html>
